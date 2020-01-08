@@ -44,12 +44,13 @@ class Worker extends Person {
   
   @override
   String greetMe() {
-        return "${this._firstName} ${this._lastName} reporting for work...";
+    return "${this._firstName} ${this._lastName} reporting for work...";
   }
 }
 
 /*
- * Concrete class that complies with Person contract
+ * Concrete class that complies with Person contract.
+ * Must override all props and methods
  */ 
 class Boss implements Person {
   
@@ -69,7 +70,8 @@ class Boss implements Person {
 }
 
 /*
- * Abstract lass that complies with Person contract (partially)
+ * Abstract lass that complies with Person contract (partially).
+ * No need to override everything
  */ 
 abstract class Ceo implements Person {
 

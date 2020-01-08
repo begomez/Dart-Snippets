@@ -11,7 +11,7 @@ void main() {
   testWhileStruct();
   testIfStruct();
   */
-  testIfStruct();
+  testEnums();
 }
 
 /*
@@ -49,14 +49,15 @@ void testForStruct() {
  * Looping struct: while/do-while
  */ 
 void testWhileStruct() {
-  var i = 20;
-  
   print("while...");
+  
+  var i = 20;
   while (i > 0) {
     print(i--);
   }
   
   print("do-while...");
+  
   var j = 20;
   do {
     print(j--);

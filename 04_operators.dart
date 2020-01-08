@@ -77,6 +77,7 @@ testMoreOperators() {
   somePerson._age = 18;
   somePerson._gender = "male";
 
+  //XXX: operator .. usage
   var anotherPerson = Person()
     .._name = "Jane Dough"
     .._age = 18

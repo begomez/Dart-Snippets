@@ -65,6 +65,7 @@ void nestedFuncs() {
         
         print("On 3rd level....");
         
+        //XXX: can access surrounding scope
         assert(nestedVar == 0);
         assert(firstLevelVar == 1);
         assert(secondLevelVar == 2);
@@ -93,7 +94,7 @@ Function gimmeSomeFunction() {
  */ 
 class Greeter {
   
-  //XXX: high-order function receiving 1 fun as param and default value
+  //XXX: high-order function receiving 1 fun as param and string with default value
   greetSomebody({Function f, String name = "somebody..."}) {
     f(name);
   }

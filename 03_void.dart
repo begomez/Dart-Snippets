@@ -14,12 +14,12 @@ void main() {
   var numImplicit = greeter.greetImplicitReturn();
   print("num implicit is $numImplicit");
 }
-​
+
 /**
  * Test class
  */ 
 class Greeter {
-​
+
   /*
    * Function with implicit return data type, returns NULL if no other
    * value is returned
@@ -31,11 +31,10 @@ class Greeter {
     
     return num;
   }
-​
   
   /*
-   * Function with explicit return data type, returns NOTHING although 
-   * its returned value can be saved
+   * Function with explicit return data type, returns NOTHING (void) 
+   * although its returned value can be saved
    */
   void greetExplicitReturn() {
     print("Hi from explicit");

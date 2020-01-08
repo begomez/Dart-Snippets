@@ -13,8 +13,19 @@ void main() {
   print(trainee.toString());
   print(boss.toString());
   
+  person.doSome();
+  trainee.doSome();
+  boss.doSome();
+  
   print("${trainee.fullName()} earns ${trainee.calculateSalary()} €");
   print("${boss.fullName()} earns ${boss.calculateSalary()} €");
+}
+
+/**
+ * Test struct
+ */ 
+mixin Test {
+  
 }
 
 /*
@@ -33,6 +44,8 @@ mixin Worker {
   double calculateSalary() {
     const BASE_SALARY = 100.0;
     const INCREMENT = 10.0;
+    
+    print("Calculating for ${this.runtimeType}...");
     
     double salary = BASE_SALARY;
     
@@ -57,6 +70,10 @@ class Person {
     return this._firstName + " " + this._lastName;
   }
   
+  doSome() {
+    //XXX: no actions
+  }
+  
   @override
   String toString() {
     return "${this._firstName + " " + this._lastName}";
@@ -72,7 +89,15 @@ class Employee extends Person with Worker {
   Employee(_firstName, _lastName) : super(_firstName, _lastName);
   
   @override
+  doSome() {
+    //XXX: can access mixin method
+    this.calculateSalary();
+  }
+  
+  @override
   String toString() {
+    
+    //XXX: can access mixin props
     return "My name is ${this.fullName()}, night? ${this._nightShift}, accountable? ${this._accountable}";
   }
 }
@@ -80,13 +105,20 @@ class Employee extends Person with Worker {
 /*
  * Concrete class that uses former mixin 
  */
-class Employer extends Person with Worker {
+class Employer extends Person with Worker, Test {
   
   //XXX: constr
   Employer(_firstName, _lastName) : super(_firstName, _lastName);  
 
   @override
+  doSome() {
+    //XXX: can access mixin method
+    this.calculateSalary();
+  }
+  
+  @override
   String toString() {
+    //XXX: can access mixin props
     return "My name is ${this.fullName()}, night? ${this._nightShift}, accountable? ${this._accountable}";
   }
 }
